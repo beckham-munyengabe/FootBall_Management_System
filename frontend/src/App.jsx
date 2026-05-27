@@ -19,7 +19,14 @@ const Protected = ({ children, roles }) => {
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <style>{`
+        /* Ensure select options are visible across browsers */
+        select { color: inherit !important; background-color: inherit !important; }
+        select * { color: #000 !important; background-color: #fff !important; }
+        option { color: #000 !important; background-color: #fff !important; }
+      `}</style>
+      <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route element={<Protected><Layout /></Protected>}>
@@ -31,6 +38,7 @@ export default function App() {
         <Route path="/finance" element={<Protected roles={['administrator','accountant']}><Finance /></Protected>} />
       </Route>
       <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
+      </Routes>
+    </>
   );
 }
