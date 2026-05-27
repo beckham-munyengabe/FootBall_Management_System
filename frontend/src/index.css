@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: radial-gradient(1200px 600px at 10% -10%, #0f4a36 0%, transparent 60%),
+              radial-gradient(900px 500px at 100% 0%, #134e4a 0%, transparent 55%),
+              #04140f;
+  color: #e6f3ec;
+}
+
+.card { @apply bg-white/5 backdrop-blur border border-white/10 rounded-2xl shadow-xl; }
+.btn { @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold transition; }
+.btn-primary { @apply btn bg-pitch-500 hover:bg-pitch-400 text-black; }
+.btn-ghost { @apply btn bg-white/5 hover:bg-white/10 text-white border border-white/10; }
+.input { @apply w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-pitch-500; }
+.label { @apply text-sm text-white/70 mb-1 block; }
+.table-th { @apply text-left text-xs font-semibold uppercase tracking-wider text-white/60 px-4 py-3; }
+.table-td { @apply px-4 py-3 text-sm border-t border-white/5; }
+.badge { @apply inline-block px-2 py-0.5 text-xs rounded-full font-semibold; }
